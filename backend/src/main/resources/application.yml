@@ -1,0 +1,28 @@
+datasources:
+  default:
+    url: jdbc:postgresql://db:5432/assetsdb
+    username: assetuser
+    password: secret
+    driverClassName: org.postgresql.Driver
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl.auto: update
+micronaut:
+  server:
+    host: 0.0.0.0
+    port: 8080
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowed-origins:
+            - "http://139.59.15.97:5173"
+            - "http://localhost:5173"
+          allowed-methods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+            - OPTIONS
